@@ -1,1 +1,152 @@
 [2024-09-28 20:06:23,004: INFO: main: Logger Developed Successfully!]
+[2024-10-04 20:59:59,169: INFO: main: ####### Data Ingestion Stage has started #######]
+[2024-10-04 20:59:59,212: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2024-10-04 20:59:59,311: INFO: common: YAML file: params.yaml loaded successfully]
+[2024-10-04 20:59:59,313: ERROR: main: "'ConfigBox' object has no attribute '_root'"]
+Traceback (most recent call last):
+  File "box\box.py", line 503, in box.box.Box.__getitem__
+KeyError: '_root'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\box.py", line 536, in box.box.Box.__getattr__
+  File "box\box.py", line 524, in box.box.Box.__getitem__
+box.exceptions.BoxKeyError: "'_root'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\box.py", line 538, in box.box.Box.__getattr__
+AttributeError: 'ConfigBox' object has no attribute '_root'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\config_box.py", line 28, in box.config_box.ConfigBox.__getattr__
+  File "box\box.py", line 552, in box.box.Box.__getattr__
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute '_root'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\box.py", line 503, in box.box.Box.__getitem__
+KeyError: '_root'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\box.py", line 536, in box.box.Box.__getattr__
+  File "box\box.py", line 524, in box.box.Box.__getitem__
+box.exceptions.BoxKeyError: "'_root'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\box.py", line 538, in box.box.Box.__getattr__
+AttributeError: 'ConfigBox' object has no attribute '_root'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\NLP\Text Summarization\Project Files\main.py", line 11, in <module>
+    objDITP.main()
+  File "d:\projects\nlp\text summarization\project files\src\text_summarization\pipeline\stage_01_data_ingestion.py", line 24, in main
+    raise e
+  File "d:\projects\nlp\text summarization\project files\src\text_summarization\pipeline\stage_01_data_ingestion.py", line 17, in main
+    config = ConfigurationManager()
+  File "d:\projects\nlp\text summarization\project files\src\text_summarization\config\configuration.py", line 12, in __init__
+    create_directories([self.config._root])
+  File "box\config_box.py", line 30, in box.config_box.ConfigBox.__getattr__
+  File "box\box.py", line 552, in box.box.Box.__getattr__
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute '_root'"
+[2024-10-04 21:01:15,908: INFO: main: ####### Data Ingestion Stage has started #######]
+[2024-10-04 21:01:15,910: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2024-10-04 21:01:15,911: INFO: common: YAML file: params.yaml loaded successfully]
+[2024-10-04 21:01:15,912: INFO: common: created directory at: data]
+[2024-10-04 21:01:15,913: INFO: common: created directory at: data/images]
+[2024-10-04 21:01:20,338: INFO: data_ingestion: data/images/data.zip downloaded! With the following info: 
+Connection: close
+Content-Length: 7903594
+Cache-Control: max-age=300
+Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline'; sandbox
+Content-Type: application/zip
+ETag: "dbc016a060da18070593b83afff580c9b300f0b6ea4147a7988433e04df246ca"
+Strict-Transport-Security: max-age=31536000
+X-Content-Type-Options: nosniff
+X-Frame-Options: deny
+X-XSS-Protection: 1; mode=block
+X-GitHub-Request-Id: D5EC:08C8:2CF6B:34BA2:67000A44
+Accept-Ranges: bytes
+Date: Fri, 04 Oct 2024 15:31:17 GMT
+Via: 1.1 varnish
+X-Served-By: cache-del21744-DEL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1728055877.118815,VS0,VE624
+Vary: Authorization,Accept-Encoding,Origin
+Access-Control-Allow-Origin: *
+Cross-Origin-Resource-Policy: cross-origin
+X-Fastly-Request-ID: 2c9863d56583b03287dd76c174387937452b1daa
+Expires: Fri, 04 Oct 2024 15:36:17 GMT
+Source-Age: 0
+
+]
+[2024-10-04 21:01:20,764: INFO: main: ####### Data Ingestion Stage is completed #######
+
+
+]
+[2024-10-04 21:03:00,564: INFO: main: ####### Data Ingestion Stage has started #######]
+[2024-10-04 21:03:00,587: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2024-10-04 21:03:00,588: INFO: common: YAML file: params.yaml loaded successfully]
+[2024-10-04 21:03:00,589: INFO: common: created directory at: data]
+[2024-10-04 21:03:00,590: INFO: common: created directory at: data/text_data]
+[2024-10-04 21:03:00,769: ERROR: main: [Errno 2] No such file or directory: 'data/images/data.zip']
+Traceback (most recent call last):
+  File "D:\Projects\NLP\Text Summarization\Project Files\main.py", line 11, in <module>
+    objDITP.main()
+  File "d:\projects\nlp\text summarization\project files\src\text_summarization\pipeline\stage_01_data_ingestion.py", line 24, in main
+    raise e
+  File "d:\projects\nlp\text summarization\project files\src\text_summarization\pipeline\stage_01_data_ingestion.py", line 20, in main
+    data_ingestion.download_file()
+  File "d:\projects\nlp\text summarization\project files\src\text_summarization\components\data_ingestion.py", line 22, in download_file
+    filename, headers = request.urlretrieve(
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\urllib\request.py", line 251, in urlretrieve
+    tfp = open(filename, 'wb')
+FileNotFoundError: [Errno 2] No such file or directory: 'data/images/data.zip'
+[2024-10-04 21:03:19,488: INFO: main: ####### Data Ingestion Stage has started #######]
+[2024-10-04 21:03:19,534: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2024-10-04 21:03:19,536: INFO: common: YAML file: params.yaml loaded successfully]
+[2024-10-04 21:03:19,536: INFO: common: created directory at: data]
+[2024-10-04 21:03:19,537: INFO: common: created directory at: data/text_data]
+[2024-10-04 21:03:22,504: INFO: data_ingestion: data/text_data/data.zip downloaded! With the following info: 
+Connection: close
+Content-Length: 7903594
+Cache-Control: max-age=300
+Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline'; sandbox
+Content-Type: application/zip
+ETag: "dbc016a060da18070593b83afff580c9b300f0b6ea4147a7988433e04df246ca"
+Strict-Transport-Security: max-age=31536000
+X-Content-Type-Options: nosniff
+X-Frame-Options: deny
+X-XSS-Protection: 1; mode=block
+X-GitHub-Request-Id: D5EC:08C8:2CF6B:34BA2:67000A44
+Accept-Ranges: bytes
+Date: Fri, 04 Oct 2024 15:33:19 GMT
+Via: 1.1 varnish
+X-Served-By: cache-del21727-DEL
+X-Cache: HIT
+X-Cache-Hits: 0
+X-Timer: S1728056000.790147,VS0,VE1
+Vary: Authorization,Accept-Encoding,Origin
+Access-Control-Allow-Origin: *
+Cross-Origin-Resource-Policy: cross-origin
+X-Fastly-Request-ID: 48192a4603dc9802246c7583370dd4ddcd60a743
+Expires: Fri, 04 Oct 2024 15:38:19 GMT
+Source-Age: 122
+
+]
+[2024-10-04 21:03:22,828: INFO: main: ####### Data Ingestion Stage is completed #######
+
+
+]

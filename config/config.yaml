@@ -1,0 +1,8 @@
+data_root: data
+
+
+data_ingestion:
+  root_dir: data/text_data
+  source_URL: https://github.com/entbappy/Branching-tutorial/raw/master/summarizer-data.zip
+  local_data_file: data/text_data/data.zip
+  unzip_dir: data/text_data
