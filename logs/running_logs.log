@@ -150,3 +150,69 @@ Source-Age: 122
 
 
 ]
+[2024-10-08 23:49:55,294: INFO: main: ####### Data Validation Stage has started #######]
+[2024-10-08 23:49:55,324: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2024-10-08 23:49:55,472: INFO: common: YAML file: params.yaml loaded successfully]
+[2024-10-08 23:49:55,491: INFO: common: created directory at: data]
+[2024-10-08 23:49:55,492: INFO: common: created directory at: artifacts/data_validation]
+[2024-10-08 23:49:55,492: ERROR: main: 'DataValidationConfig' object has no attribute 'data_ing_dir']
+Traceback (most recent call last):
+  File "D:\Projects\NLP\Text Summarization\Project Files\main.py", line 26, in <module>
+    objDVTP.main()
+  File "d:\projects\nlp\text summarization\project files\src\text_summarization\pipeline\stage_02_data_validation.py", line 14, in main
+    data_validation.validate_all_files_exist()
+  File "d:\projects\nlp\text summarization\project files\src\text_summarization\components\data_validation.py", line 33, in validate_all_files_exist
+    raise e
+  File "d:\projects\nlp\text summarization\project files\src\text_summarization\components\data_validation.py", line 14, in validate_all_files_exist
+    all_files = os.listdir(os.path.join(self.config.data_ing_dir,"samsum_dataset"))
+AttributeError: 'DataValidationConfig' object has no attribute 'data_ing_dir'
+[2024-10-08 23:51:03,926: INFO: main: ####### Data Validation Stage has started #######]
+[2024-10-08 23:51:03,934: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2024-10-08 23:51:03,937: INFO: common: YAML file: params.yaml loaded successfully]
+[2024-10-08 23:51:03,938: INFO: common: created directory at: data]
+[2024-10-08 23:51:03,941: INFO: common: created directory at: artifacts/data_validation]
+[2024-10-08 23:51:03,942: ERROR: main: DataValidationConfig.__init__() missing 1 required positional argument: 'data_ing_dir']
+Traceback (most recent call last):
+  File "D:\Projects\NLP\Text Summarization\Project Files\main.py", line 26, in <module>
+    objDVTP.main()
+  File "d:\projects\nlp\text summarization\project files\src\text_summarization\pipeline\stage_02_data_validation.py", line 12, in main
+    data_validation_config = config.get_data_validation_config()
+  File "d:\projects\nlp\text summarization\project files\src\text_summarization\config\configuration.py", line 36, in get_data_validation_config
+    data_validation_config = DataValidationConfig(
+TypeError: DataValidationConfig.__init__() missing 1 required positional argument: 'data_ing_dir'
+[2024-10-08 23:51:40,054: INFO: main: ####### Data Validation Stage has started #######]
+[2024-10-08 23:51:40,060: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2024-10-08 23:51:40,064: INFO: common: YAML file: params.yaml loaded successfully]
+[2024-10-08 23:51:40,066: INFO: common: created directory at: data]
+[2024-10-08 23:51:40,067: INFO: common: created directory at: artifacts/data_validation]
+[2024-10-08 23:51:40,650: INFO: main: ####### Data Validation Stage is completed #######
+
+
+]
+[2024-10-08 23:53:10,011: INFO: main: ####### Data Validation Stage has started #######]
+[2024-10-08 23:53:10,038: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2024-10-08 23:53:10,042: INFO: common: YAML file: params.yaml loaded successfully]
+[2024-10-08 23:53:10,045: INFO: common: created directory at: data]
+[2024-10-08 23:53:10,049: INFO: common: created directory at: data/data_validation]
+[2024-10-08 23:53:10,053: INFO: main: ####### Data Validation Stage is completed #######
+
+
+]
+[2024-10-09 00:02:22,043: INFO: main: ####### Data Validation Stage has started #######]
+[2024-10-09 00:02:22,068: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2024-10-09 00:02:22,105: INFO: common: YAML file: params.yaml loaded successfully]
+[2024-10-09 00:02:22,108: INFO: common: created directory at: data]
+[2024-10-09 00:02:22,110: INFO: common: created directory at: data/data_validation]
+[2024-10-09 00:02:22,121: INFO: main: ####### Data Validation Stage is completed #######
+
+
+]
+[2024-10-09 00:03:10,336: INFO: main: ####### Data Validation Stage has started #######]
+[2024-10-09 00:03:10,340: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2024-10-09 00:03:10,343: INFO: common: YAML file: params.yaml loaded successfully]
+[2024-10-09 00:03:10,344: INFO: common: created directory at: data]
+[2024-10-09 00:03:10,345: INFO: common: created directory at: data/data_validation]
+[2024-10-09 00:03:10,348: INFO: main: ####### Data Validation Stage is completed #######
+
+
+]
