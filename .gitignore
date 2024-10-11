@@ -1,9 +1,9 @@
 text_summarization_proj/
 src/text_summarization.egg-info/
-logs/*
 src/text_summarization/__pycache__/__init__.cpython-310.pyc
 data/
 *.pyc
 check*
 mlruns/*
 dvc dag.PNG
+*.ipynb

@@ -216,3 +216,68 @@ TypeError: DataValidationConfig.__init__() missing 1 required positional argumen
 
 
 ]
+[2024-10-11 16:33:20,016: INFO: config: PyTorch version 2.4.1 available.]
+[2024-10-11 16:33:24,465: INFO: main: ####### Data Transformation Stage has started #######]
+[2024-10-11 16:33:24,482: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2024-10-11 16:33:24,544: INFO: common: YAML file: params.yaml loaded successfully]
+[2024-10-11 16:33:24,586: INFO: common: created directory at: data]
+[2024-10-11 16:33:24,599: INFO: common: created directory at: data/data_transformation/samsum_dataset]
+[2024-10-11 16:33:32,531: ERROR: main: 'DataTransformationConfig' object has no attribute 'data_path']
+Traceback (most recent call last):
+  File "D:\Projects\NLP\Text Summarization\Project Files\main.py", line 40, in <module>
+    objDTTP.main()
+  File "d:\projects\nlp\text summarization\project files\src\text_summarization\pipeline\stage_03_data_transformation.py", line 14, in main
+    data_transformation.convert()
+  File "d:\projects\nlp\text summarization\project files\src\text_summarization\components\data_transformation.py", line 30, in convert
+    dataset_samsum = load_from_disk(self.config.data_path)
+AttributeError: 'DataTransformationConfig' object has no attribute 'data_path'
+[2024-10-11 16:48:49,022: INFO: config: PyTorch version 2.4.1 available.]
+[2024-10-11 16:48:49,502: INFO: main: ####### Data Transformation Stage has started #######]
+[2024-10-11 16:48:49,502: INFO: stage_03_data_transformation: Setting Config Object...]
+[2024-10-11 16:48:49,502: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2024-10-11 16:48:49,507: INFO: common: YAML file: params.yaml loaded successfully]
+[2024-10-11 16:48:49,507: INFO: common: created directory at: data]
+[2024-10-11 16:48:49,507: INFO: stage_03_data_transformation: Reading configs...]
+[2024-10-11 16:48:49,507: INFO: common: created directory at: data/data_transformation/samsum_dataset]
+[2024-10-11 16:48:49,507: INFO: stage_03_data_transformation: Data Transforming Object...]
+[2024-10-11 16:48:51,180: INFO: data_transformation: Loading Data...]
+[2024-10-11 16:48:52,118: INFO: data_transformation: Transforming Data...]
+[2024-10-11 16:48:52,256: INFO: data_transformation: Creating Input Encodings...]
+[2024-10-11 16:48:52,520: INFO: data_transformation: Creating Target Encodings...]
+[2024-10-11 16:48:52,840: INFO: data_transformation: Creating Input Encodings...]
+[2024-10-11 16:48:53,071: INFO: data_transformation: Creating Target Encodings...]
+[2024-10-11 16:48:53,230: INFO: data_transformation: Creating Input Encodings...]
+[2024-10-11 16:48:53,445: INFO: data_transformation: Creating Target Encodings...]
+[2024-10-11 16:48:53,612: INFO: data_transformation: Creating Input Encodings...]
+[2024-10-11 16:48:53,821: INFO: data_transformation: Creating Target Encodings...]
+[2024-10-11 16:48:53,960: INFO: data_transformation: Creating Input Encodings...]
+[2024-10-11 16:48:54,205: INFO: data_transformation: Creating Target Encodings...]
+[2024-10-11 16:48:54,350: INFO: data_transformation: Creating Input Encodings...]
+[2024-10-11 16:48:54,523: INFO: data_transformation: Creating Target Encodings...]
+[2024-10-11 16:48:54,655: INFO: data_transformation: Creating Input Encodings...]
+[2024-10-11 16:48:54,841: INFO: data_transformation: Creating Target Encodings...]
+[2024-10-11 16:48:54,975: INFO: data_transformation: Creating Input Encodings...]
+[2024-10-11 16:48:55,150: INFO: data_transformation: Creating Target Encodings...]
+[2024-10-11 16:48:55,382: INFO: data_transformation: Creating Input Encodings...]
+[2024-10-11 16:48:55,556: INFO: data_transformation: Creating Target Encodings...]
+[2024-10-11 16:48:55,694: INFO: data_transformation: Creating Input Encodings...]
+[2024-10-11 16:48:55,870: INFO: data_transformation: Creating Target Encodings...]
+[2024-10-11 16:48:56,016: INFO: data_transformation: Creating Input Encodings...]
+[2024-10-11 16:48:56,201: INFO: data_transformation: Creating Target Encodings...]
+[2024-10-11 16:48:56,324: INFO: data_transformation: Creating Input Encodings...]
+[2024-10-11 16:48:56,510: INFO: data_transformation: Creating Target Encodings...]
+[2024-10-11 16:48:56,634: INFO: data_transformation: Creating Input Encodings...]
+[2024-10-11 16:48:56,801: INFO: data_transformation: Creating Target Encodings...]
+[2024-10-11 16:48:56,940: INFO: data_transformation: Creating Input Encodings...]
+[2024-10-11 16:48:57,161: INFO: data_transformation: Creating Target Encodings...]
+[2024-10-11 16:48:57,281: INFO: data_transformation: Creating Input Encodings...]
+[2024-10-11 16:48:57,410: INFO: data_transformation: Creating Target Encodings...]
+[2024-10-11 16:48:57,570: INFO: data_transformation: Creating Input Encodings...]
+[2024-10-11 16:48:57,721: INFO: data_transformation: Creating Target Encodings...]
+[2024-10-11 16:48:57,871: INFO: data_transformation: Creating Input Encodings...]
+[2024-10-11 16:48:58,036: INFO: data_transformation: Creating Target Encodings...]
+[2024-10-11 16:48:58,281: INFO: data_transformation: Saving Transformed Data...]
+[2024-10-11 16:48:58,497: INFO: main: ####### Data Transformation Stage is completed #######
+
+
+]

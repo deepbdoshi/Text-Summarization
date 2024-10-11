@@ -17,3 +17,10 @@ class DataValidationConfig:
     ALL_REQUIRED_FILES: list
 
 
+@dataclass(frozen=True)
+class DataTransformationConfig:
+    root_dir: Path
+    data_ing_dir: Path
+    tokenizer_name: Path
+
+
