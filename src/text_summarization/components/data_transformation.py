@@ -15,11 +15,12 @@ class DataTransformation:
     
     def convert_examples_to_features(self,example_batch):
         logger.info("Creating Input Encodings...")
-        input_encodings = self.tokenizer(example_batch['dialogue'] , max_length = 1024, truncation = True )
-        
+        input_encodings = self.tokenizer(example_batch['dialogue'] , return_tensors="pt", max_length = 256, truncation = True )
+        # input_encodings = self.tokenizer(example_batch['dialogue'] , max_length = 1024, truncation = True ) original
+
         logger.info("Creating Target Encodings...")
         with self.tokenizer.as_target_tokenizer():
-            target_encodings = self.tokenizer(example_batch['summary'], max_length = 128, truncation = True )
+            target_encodings = self.tokenizer(example_batch['summary'], return_tensors="pt", max_length = 64, truncation = True )
             
         return {
             'input_ids' : input_encodings['input_ids'],

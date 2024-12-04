@@ -21,7 +21,18 @@ data_transformation:
   tokenizer_name: google/pegasus-cnn_dailymail
 
 
+model_training:
+  root_dir: data/trained_model
+  data_ing_path: data/data_transformation/samsum_dataset
+  model_ckpt: google/pegasus-cnn_dailymail
 
+
+model_evaluation:
+  root_dir: data/model_evaluation
+  data_path: data/data_transformation/samsum_dataset
+  model_path: data/trained_model/pegasus-samsum-model
+  tokenizer_path: data/trained_model/tokenizer
+  metric_file_name: data/model_evaluation/metrics.csv
 
 
 

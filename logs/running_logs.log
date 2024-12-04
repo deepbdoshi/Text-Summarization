@@ -281,3 +281,212 @@ AttributeError: 'DataTransformationConfig' object has no attribute 'data_path'
 
 
 ]
+[2024-10-12 16:55:50,198: INFO: config: PyTorch version 2.4.1 available.]
+[2024-10-12 16:59:18,769: INFO: config: PyTorch version 2.4.1 available.]
+[2024-10-12 16:59:37,929: INFO: main: ####### Model Training Stage has started #######]
+[2024-10-12 16:59:38,803: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2024-10-12 16:59:38,952: INFO: common: YAML file: params.yaml loaded successfully]
+[2024-10-12 16:59:38,974: INFO: common: created directory at: data]
+[2024-10-12 16:59:38,975: ERROR: main: 'ConfigurationManager' object has no attribute 'get_model_trainer_config']
+Traceback (most recent call last):
+  File "D:\Projects\NLP\Text Summarization\Project Files\main.py", line 54, in <module>
+    objMTP.main()
+  File "d:\projects\nlp\text summarization\project files\src\text_summarization\pipeline\stage_04_model_training.py", line 12, in main
+    model_trainer_config = config.get_model_trainer_config()
+AttributeError: 'ConfigurationManager' object has no attribute 'get_model_trainer_config'
+[2024-10-12 17:25:33,962: INFO: config: PyTorch version 2.4.1 available.]
+[2024-10-12 17:25:43,639: INFO: main: ####### Model Training Stage has started #######]
+[2024-10-12 17:25:43,667: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2024-10-12 17:25:43,714: INFO: common: YAML file: params.yaml loaded successfully]
+[2024-10-12 17:25:43,722: INFO: common: created directory at: data]
+[2024-10-12 17:25:43,722: ERROR: main: "'ConfigBox' object has no attribute 'model_trainer'"]
+Traceback (most recent call last):
+  File "box\box.py", line 503, in box.box.Box.__getitem__
+KeyError: 'model_trainer'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\box.py", line 536, in box.box.Box.__getattr__
+  File "box\box.py", line 524, in box.box.Box.__getitem__
+box.exceptions.BoxKeyError: "'model_trainer'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\box.py", line 538, in box.box.Box.__getattr__
+AttributeError: 'ConfigBox' object has no attribute 'model_trainer'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\config_box.py", line 28, in box.config_box.ConfigBox.__getattr__
+  File "box\box.py", line 552, in box.box.Box.__getattr__
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'model_trainer'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\box.py", line 503, in box.box.Box.__getitem__
+KeyError: 'model_trainer'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\box.py", line 536, in box.box.Box.__getattr__
+  File "box\box.py", line 524, in box.box.Box.__getitem__
+box.exceptions.BoxKeyError: "'model_trainer'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\box.py", line 538, in box.box.Box.__getattr__
+AttributeError: 'ConfigBox' object has no attribute 'model_trainer'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\NLP\Text Summarization\Project Files\main.py", line 54, in <module>
+    objMTP.main()
+  File "d:\projects\nlp\text summarization\project files\src\text_summarization\pipeline\stage_04_model_training.py", line 12, in main
+    model_trainer_config = config.get_model_training_config()
+  File "d:\projects\nlp\text summarization\project files\src\text_summarization\config\configuration.py", line 61, in get_model_training_config
+    config = self.config.model_trainer
+  File "box\config_box.py", line 30, in box.config_box.ConfigBox.__getattr__
+  File "box\box.py", line 552, in box.box.Box.__getattr__
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'model_trainer'"
+[2024-10-12 17:27:11,698: INFO: config: PyTorch version 2.4.1 available.]
+[2024-10-12 17:27:12,990: INFO: main: ####### Model Training Stage has started #######]
+[2024-10-12 17:27:12,995: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2024-10-12 17:27:12,995: INFO: common: YAML file: params.yaml loaded successfully]
+[2024-10-12 17:27:12,995: INFO: common: created directory at: data]
+[2024-10-12 17:27:13,000: INFO: common: created directory at: data/trained_model]
+[2024-10-12 17:27:13,000: ERROR: main: "'ConfigBox' object has no attribute 'data_path'"]
+Traceback (most recent call last):
+  File "box\box.py", line 503, in box.box.Box.__getitem__
+KeyError: 'data_path'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\box.py", line 536, in box.box.Box.__getattr__
+  File "box\box.py", line 524, in box.box.Box.__getitem__
+box.exceptions.BoxKeyError: "'data_path'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\box.py", line 538, in box.box.Box.__getattr__
+AttributeError: 'ConfigBox' object has no attribute 'data_path'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\config_box.py", line 28, in box.config_box.ConfigBox.__getattr__
+  File "box\box.py", line 552, in box.box.Box.__getattr__
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'data_path'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\box.py", line 503, in box.box.Box.__getitem__
+KeyError: 'data_path'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\box.py", line 536, in box.box.Box.__getattr__
+  File "box\box.py", line 524, in box.box.Box.__getitem__
+box.exceptions.BoxKeyError: "'data_path'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\box.py", line 538, in box.box.Box.__getattr__
+AttributeError: 'ConfigBox' object has no attribute 'data_path'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\NLP\Text Summarization\Project Files\main.py", line 54, in <module>
+    objMTP.main()
+  File "d:\projects\nlp\text summarization\project files\src\text_summarization\pipeline\stage_04_model_training.py", line 12, in main
+    model_trainer_config = config.get_model_training_config()
+  File "d:\projects\nlp\text summarization\project files\src\text_summarization\config\configuration.py", line 68, in get_model_training_config
+    data_path=config.data_path,
+  File "box\config_box.py", line 30, in box.config_box.ConfigBox.__getattr__
+  File "box\box.py", line 552, in box.box.Box.__getattr__
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'data_path'"
+[2024-10-12 17:28:02,283: INFO: config: PyTorch version 2.4.1 available.]
+[2024-10-12 17:28:03,604: INFO: main: ####### Model Training Stage has started #######]
+[2024-10-12 17:28:03,604: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2024-10-12 17:28:03,609: INFO: common: YAML file: params.yaml loaded successfully]
+[2024-10-12 17:28:03,609: INFO: common: created directory at: data]
+[2024-10-12 17:28:03,609: INFO: common: created directory at: data/trained_model]
+[2024-10-12 17:28:03,609: ERROR: main: ModelTrainingConfig.__init__() got an unexpected keyword argument 'root_dir']
+Traceback (most recent call last):
+  File "D:\Projects\NLP\Text Summarization\Project Files\main.py", line 54, in <module>
+    objMTP.main()
+  File "d:\projects\nlp\text summarization\project files\src\text_summarization\pipeline\stage_04_model_training.py", line 12, in main
+    model_trainer_config = config.get_model_training_config()
+  File "d:\projects\nlp\text summarization\project files\src\text_summarization\config\configuration.py", line 66, in get_model_training_config
+    model_training_config = ModelTrainingConfig(
+TypeError: ModelTrainingConfig.__init__() got an unexpected keyword argument 'root_dir'
+[2024-10-12 17:29:53,816: INFO: config: PyTorch version 2.4.1 available.]
+[2024-10-12 17:29:55,548: INFO: main: ####### Model Training Stage has started #######]
+[2024-10-12 17:29:55,553: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2024-10-12 17:29:55,553: INFO: common: YAML file: params.yaml loaded successfully]
+[2024-10-12 17:29:55,553: INFO: common: created directory at: data]
+[2024-10-12 17:29:55,557: INFO: common: created directory at: data/trained_model]
+[2024-10-12 17:29:55,557: ERROR: main: ModelTrainingConfig.__init__() got an unexpected keyword argument 'data_ing_path']
+Traceback (most recent call last):
+  File "D:\Projects\NLP\Text Summarization\Project Files\main.py", line 54, in <module>
+    objMTP.main()
+  File "d:\projects\nlp\text summarization\project files\src\text_summarization\pipeline\stage_04_model_training.py", line 12, in main
+    model_trainer_config = config.get_model_training_config()
+  File "d:\projects\nlp\text summarization\project files\src\text_summarization\config\configuration.py", line 66, in get_model_training_config
+    model_training_config = ModelTrainingConfig(
+TypeError: ModelTrainingConfig.__init__() got an unexpected keyword argument 'data_ing_path'
+[2024-10-12 17:30:43,961: INFO: config: PyTorch version 2.4.1 available.]
+[2024-10-12 17:30:45,202: INFO: main: ####### Model Training Stage has started #######]
+[2024-10-12 17:30:45,207: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2024-10-12 17:30:45,207: INFO: common: YAML file: params.yaml loaded successfully]
+[2024-10-12 17:30:45,212: INFO: common: created directory at: data]
+[2024-10-12 17:30:45,212: INFO: common: created directory at: data/trained_model]
+[2024-10-12 17:30:45,212: INFO: model_training: Initializing Model...]
+[2024-11-07 18:37:42,242: INFO: config: PyTorch version 2.4.1 available.]
+[2024-11-07 18:38:09,281: INFO: main: ####### Data Transformation Stage has started #######]
+[2024-11-07 18:38:09,286: INFO: stage_03_data_transformation: Setting Config Object...]
+[2024-11-07 18:38:09,448: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2024-11-07 18:38:09,538: INFO: common: YAML file: params.yaml loaded successfully]
+[2024-11-07 18:38:09,598: INFO: common: created directory at: data]
+[2024-11-07 18:38:09,601: INFO: stage_03_data_transformation: Reading configs...]
+[2024-11-07 18:38:09,604: INFO: common: created directory at: data/data_transformation/samsum_dataset]
+[2024-11-07 18:38:09,605: INFO: stage_03_data_transformation: Data Transforming Object...]
+[2024-11-07 18:38:16,136: INFO: data_transformation: Loading Data...]
+[2024-11-07 18:38:17,511: INFO: data_transformation: Transforming Data...]
+[2024-11-07 18:38:18,038: INFO: data_transformation: Creating Input Encodings...]
+[2024-11-07 18:38:18,233: INFO: data_transformation: Creating Target Encodings...]
+[2024-11-07 18:38:19,289: INFO: data_transformation: Saving Transformed Data...]
+[2024-11-07 18:38:19,586: INFO: main: ####### Data Transformation Stage is completed #######
+
+
+]
+[2024-11-08 17:30:37,570: INFO: config: PyTorch version 2.4.1 available.]
+[2024-11-08 17:30:49,548: INFO: main: ####### Data Transformation Stage has started #######]
+[2024-11-08 17:30:49,553: INFO: stage_03_data_transformation: Setting Config Object...]
+[2024-11-08 17:30:49,576: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2024-11-08 17:30:49,619: INFO: common: YAML file: params.yaml loaded successfully]
+[2024-11-08 17:30:49,624: INFO: common: created directory at: data]
+[2024-11-08 17:30:49,625: INFO: stage_03_data_transformation: Reading configs...]
+[2024-11-08 17:30:49,626: INFO: common: created directory at: data/data_transformation/samsum_dataset]
+[2024-11-08 17:30:49,631: INFO: stage_03_data_transformation: Data Transforming Object...]
+[2024-11-08 17:30:53,885: INFO: data_transformation: Loading Data...]
+[2024-11-08 17:30:54,329: INFO: data_transformation: Transforming Data...]
+[2024-11-08 17:30:55,166: INFO: data_transformation: Creating Input Encodings...]
+[2024-11-08 17:30:55,503: INFO: data_transformation: Creating Target Encodings...]
+[2024-11-08 17:30:56,652: INFO: data_transformation: Saving Transformed Data...]
+[2024-11-08 17:30:57,083: INFO: main: ####### Data Transformation Stage is completed #######
+
+
+]
