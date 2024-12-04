@@ -490,3 +490,12 @@ TypeError: ModelTrainingConfig.__init__() got an unexpected keyword argument 'da
 
 
 ]
+[2024-12-04 14:50:35,334: INFO: server: Started server process [14316]]
+[2024-12-04 14:50:35,343: INFO: on: Waiting for application startup.]
+[2024-12-04 14:50:35,370: INFO: on: Application startup complete.]
+[2024-12-04 14:50:35,372: INFO: server: Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)]
+[2024-12-04 14:52:31,851: INFO: config: PyTorch version 2.4.1 available.]
+[2024-12-04 15:45:19,132: INFO: server: Shutting down]
+[2024-12-04 15:45:19,238: INFO: on: Waiting for application shutdown.]
+[2024-12-04 15:45:19,240: INFO: on: Application shutdown complete.]
+[2024-12-04 15:45:19,241: INFO: server: Finished server process [14316]]

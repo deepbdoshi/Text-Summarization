@@ -7,3 +7,4 @@ check*
 mlruns/*
 dvc dag.PNG
 *.ipynb
+logs/running_logs.log
