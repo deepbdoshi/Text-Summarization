@@ -63,7 +63,7 @@ Eric and Rob are going to watch a stand-up on youtube.
 
 
 #### Results
-The model was able to process and parse the uploaded text input and generate the summarised text with a **rouge score of 0.91**.
+The model was able to process and parse the uploaded text input and generate the summarised text with a **rouge1 score of 0.49** and a **rougeL score of 0.46**.
 
 
 #### Final Notes
