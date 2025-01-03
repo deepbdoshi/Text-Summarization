@@ -4,7 +4,7 @@ RUN apt update -y && apt install awscli -y
 WORKDIR /app
 
 COPY . /app
-COPY requirements.txt
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 RUN pip install --upgrade accelerate
 RUN pip uninstall -y transformers accelerate
