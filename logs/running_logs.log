@@ -499,3 +499,285 @@ TypeError: ModelTrainingConfig.__init__() got an unexpected keyword argument 'da
 [2024-12-04 15:45:19,238: INFO: on: Waiting for application shutdown.]
 [2024-12-04 15:45:19,240: INFO: on: Application shutdown complete.]
 [2024-12-04 15:45:19,241: INFO: server: Finished server process [14316]]
+[2024-12-04 16:35:52,702: INFO: config: PyTorch version 2.4.1 available.]
+[2024-12-04 16:39:30,612: INFO: config: PyTorch version 2.4.1 available.]
+[2024-12-04 16:40:03,741: INFO: config: PyTorch version 2.4.1 available.]
+[2024-12-04 16:40:29,298: INFO: config: PyTorch version 2.4.1 available.]
+[2024-12-04 16:40:31,674: INFO: main: ####### Data Transformation Stage has started #######]
+[2024-12-04 16:40:31,679: INFO: stage_03_data_transformation: Setting Config Object...]
+[2024-12-04 16:40:31,691: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2024-12-04 16:40:32,135: INFO: common: YAML file: params.yaml loaded successfully]
+[2024-12-04 16:40:32,255: INFO: common: created directory at: data]
+[2024-12-04 16:40:32,257: INFO: stage_03_data_transformation: Reading configs...]
+[2024-12-04 16:40:32,260: INFO: common: created directory at: data/data_transformation/samsum_dataset]
+[2024-12-04 16:40:32,261: INFO: stage_03_data_transformation: Data Transforming Object...]
+[2024-12-04 16:40:39,882: INFO: data_transformation: Loading Data...]
+[2024-12-04 16:40:41,071: INFO: data_transformation: Transforming Data...]
+[2024-12-04 16:40:41,125: INFO: data_transformation: Creating Input Encodings...]
+[2024-12-04 16:40:41,394: INFO: data_transformation: Creating Target Encodings...]
+[2024-12-04 16:40:42,038: ERROR: main: Unable to create tensor, you should probably activate truncation and/or padding with 'padding=True' 'truncation=True' to have batched tensors with the same length. Perhaps your features (`input_ids` in this case) have excessive nesting (inputs type `list` where type `int` is expected).]
+Traceback (most recent call last):
+  File "D:\Projects\NLP\Text Summarization\Project Files\text_summarization_proj\lib\site-packages\transformers\tokenization_utils_base.py", line 775, in convert_to_tensors
+    tensor = as_tensor(value)
+  File "D:\Projects\NLP\Text Summarization\Project Files\text_summarization_proj\lib\site-packages\transformers\tokenization_utils_base.py", line 737, in as_tensor
+    return torch.tensor(value)
+ValueError: expected sequence of length 12 at dim 1 (got 13)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\NLP\Text Summarization\Project Files\main.py", line 41, in <module>
+    objDTTP.main()
+  File "d:\projects\nlp\text summarization\project files\src\text_summarization\pipeline\stage_03_data_transformation.py", line 19, in main
+    data_transformation.convert()
+  File "d:\projects\nlp\text summarization\project files\src\text_summarization\components\data_transformation.py", line 38, in convert
+    dataset_samsum_pt = dataset_samsum.map(self.convert_examples_to_features, batched = True)
+  File "D:\Projects\NLP\Text Summarization\Project Files\text_summarization_proj\lib\site-packages\datasets\dataset_dict.py", line 866, in map
+    {
+  File "D:\Projects\NLP\Text Summarization\Project Files\text_summarization_proj\lib\site-packages\datasets\dataset_dict.py", line 867, in <dictcomp>
+    k: dataset.map(
+  File "D:\Projects\NLP\Text Summarization\Project Files\text_summarization_proj\lib\site-packages\datasets\arrow_dataset.py", line 560, in wrapper
+    out: Union["Dataset", "DatasetDict"] = func(self, *args, **kwargs)
+  File "D:\Projects\NLP\Text Summarization\Project Files\text_summarization_proj\lib\site-packages\datasets\arrow_dataset.py", line 3035, in map
+    for rank, done, content in Dataset._map_single(**dataset_kwargs):
+  File "D:\Projects\NLP\Text Summarization\Project Files\text_summarization_proj\lib\site-packages\datasets\arrow_dataset.py", line 3438, in _map_single
+    batch = apply_function_on_filtered_inputs(
+  File "D:\Projects\NLP\Text Summarization\Project Files\text_summarization_proj\lib\site-packages\datasets\arrow_dataset.py", line 3300, in apply_function_on_filtered_inputs
+    processed_inputs = function(*fn_args, *additional_args, **fn_kwargs)
+  File "d:\projects\nlp\text summarization\project files\src\text_summarization\components\data_transformation.py", line 24, in convert_examples_to_features
+    target_encodings = self.tokenizer(example_batch['summary'], return_tensors="pt", max_length = 128, truncation = True )
+  File "D:\Projects\NLP\Text Summarization\Project Files\text_summarization_proj\lib\site-packages\transformers\tokenization_utils_base.py", line 3024, in __call__
+    encodings = self._call_one(text=text, text_pair=text_pair, **all_kwargs)
+  File "D:\Projects\NLP\Text Summarization\Project Files\text_summarization_proj\lib\site-packages\transformers\tokenization_utils_base.py", line 3112, in _call_one
+    return self.batch_encode_plus(
+  File "D:\Projects\NLP\Text Summarization\Project Files\text_summarization_proj\lib\site-packages\transformers\tokenization_utils_base.py", line 3314, in batch_encode_plus
+    return self._batch_encode_plus(
+  File "D:\Projects\NLP\Text Summarization\Project Files\text_summarization_proj\lib\site-packages\transformers\tokenization_utils_fast.py", line 577, in _batch_encode_plus
+    return BatchEncoding(sanitized_tokens, sanitized_encodings, tensor_type=return_tensors)
+  File "D:\Projects\NLP\Text Summarization\Project Files\text_summarization_proj\lib\site-packages\transformers\tokenization_utils_base.py", line 240, in __init__
+    self.convert_to_tensors(tensor_type=tensor_type, prepend_batch_axis=prepend_batch_axis)
+  File "D:\Projects\NLP\Text Summarization\Project Files\text_summarization_proj\lib\site-packages\transformers\tokenization_utils_base.py", line 791, in convert_to_tensors
+    raise ValueError(
+ValueError: Unable to create tensor, you should probably activate truncation and/or padding with 'padding=True' 'truncation=True' to have batched tensors with the same length. Perhaps your features (`input_ids` in this case) have excessive nesting (inputs type `list` where type `int` is expected).
+[2024-12-04 16:43:57,632: INFO: config: PyTorch version 2.4.1 available.]
+[2024-12-04 16:43:58,990: INFO: main: ####### Data Transformation Stage has started #######]
+[2024-12-04 16:43:58,994: INFO: stage_03_data_transformation: Setting Config Object...]
+[2024-12-04 16:43:58,997: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2024-12-04 16:43:59,000: INFO: common: YAML file: params.yaml loaded successfully]
+[2024-12-04 16:43:59,001: INFO: common: created directory at: data]
+[2024-12-04 16:43:59,001: INFO: stage_03_data_transformation: Reading configs...]
+[2024-12-04 16:43:59,002: INFO: common: created directory at: data/data_transformation/samsum_dataset]
+[2024-12-04 16:43:59,002: INFO: stage_03_data_transformation: Data Transforming Object...]
+[2024-12-04 16:44:00,348: INFO: data_transformation: Loading Data...]
+[2024-12-04 16:44:00,378: INFO: data_transformation: Transforming Data...]
+[2024-12-04 16:44:00,763: INFO: data_transformation: Creating Input Encodings...]
+[2024-12-04 16:44:03,904: INFO: data_transformation: Creating Target Encodings...]
+[2024-12-04 16:44:04,549: ERROR: main: Unable to create tensor, you should probably activate truncation and/or padding with 'padding=True' 'truncation=True' to have batched tensors with the same length. Perhaps your features (`input_ids` in this case) have excessive nesting (inputs type `list` where type `int` is expected).]
+Traceback (most recent call last):
+  File "D:\Projects\NLP\Text Summarization\Project Files\text_summarization_proj\lib\site-packages\transformers\tokenization_utils_base.py", line 775, in convert_to_tensors
+    tensor = as_tensor(value)
+  File "D:\Projects\NLP\Text Summarization\Project Files\text_summarization_proj\lib\site-packages\transformers\tokenization_utils_base.py", line 737, in as_tensor
+    return torch.tensor(value)
+ValueError: expected sequence of length 12 at dim 1 (got 13)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\NLP\Text Summarization\Project Files\main.py", line 41, in <module>
+    objDTTP.main()
+  File "d:\projects\nlp\text summarization\project files\src\text_summarization\pipeline\stage_03_data_transformation.py", line 19, in main
+    data_transformation.convert()
+  File "d:\projects\nlp\text summarization\project files\src\text_summarization\components\data_transformation.py", line 38, in convert
+    dataset_samsum_pt = dataset_samsum.map(self.convert_examples_to_features, batched = True)
+  File "D:\Projects\NLP\Text Summarization\Project Files\text_summarization_proj\lib\site-packages\datasets\dataset_dict.py", line 866, in map
+    {
+  File "D:\Projects\NLP\Text Summarization\Project Files\text_summarization_proj\lib\site-packages\datasets\dataset_dict.py", line 867, in <dictcomp>
+    k: dataset.map(
+  File "D:\Projects\NLP\Text Summarization\Project Files\text_summarization_proj\lib\site-packages\datasets\arrow_dataset.py", line 560, in wrapper
+    out: Union["Dataset", "DatasetDict"] = func(self, *args, **kwargs)
+  File "D:\Projects\NLP\Text Summarization\Project Files\text_summarization_proj\lib\site-packages\datasets\arrow_dataset.py", line 3035, in map
+    for rank, done, content in Dataset._map_single(**dataset_kwargs):
+  File "D:\Projects\NLP\Text Summarization\Project Files\text_summarization_proj\lib\site-packages\datasets\arrow_dataset.py", line 3438, in _map_single
+    batch = apply_function_on_filtered_inputs(
+  File "D:\Projects\NLP\Text Summarization\Project Files\text_summarization_proj\lib\site-packages\datasets\arrow_dataset.py", line 3300, in apply_function_on_filtered_inputs
+    processed_inputs = function(*fn_args, *additional_args, **fn_kwargs)
+  File "d:\projects\nlp\text summarization\project files\src\text_summarization\components\data_transformation.py", line 24, in convert_examples_to_features
+    target_encodings = self.tokenizer(example_batch['summary'], return_tensors="pt", max_length = 128, truncation = True )
+  File "D:\Projects\NLP\Text Summarization\Project Files\text_summarization_proj\lib\site-packages\transformers\tokenization_utils_base.py", line 3024, in __call__
+    encodings = self._call_one(text=text, text_pair=text_pair, **all_kwargs)
+  File "D:\Projects\NLP\Text Summarization\Project Files\text_summarization_proj\lib\site-packages\transformers\tokenization_utils_base.py", line 3112, in _call_one
+    return self.batch_encode_plus(
+  File "D:\Projects\NLP\Text Summarization\Project Files\text_summarization_proj\lib\site-packages\transformers\tokenization_utils_base.py", line 3314, in batch_encode_plus
+    return self._batch_encode_plus(
+  File "D:\Projects\NLP\Text Summarization\Project Files\text_summarization_proj\lib\site-packages\transformers\tokenization_utils.py", line 889, in _batch_encode_plus
+    batch_outputs = self._batch_prepare_for_model(
+  File "D:\Projects\NLP\Text Summarization\Project Files\text_summarization_proj\lib\site-packages\transformers\tokenization_utils.py", line 976, in _batch_prepare_for_model
+    batch_outputs = BatchEncoding(batch_outputs, tensor_type=return_tensors)
+  File "D:\Projects\NLP\Text Summarization\Project Files\text_summarization_proj\lib\site-packages\transformers\tokenization_utils_base.py", line 240, in __init__
+    self.convert_to_tensors(tensor_type=tensor_type, prepend_batch_axis=prepend_batch_axis)
+  File "D:\Projects\NLP\Text Summarization\Project Files\text_summarization_proj\lib\site-packages\transformers\tokenization_utils_base.py", line 791, in convert_to_tensors
+    raise ValueError(
+ValueError: Unable to create tensor, you should probably activate truncation and/or padding with 'padding=True' 'truncation=True' to have batched tensors with the same length. Perhaps your features (`input_ids` in this case) have excessive nesting (inputs type `list` where type `int` is expected).
+[2024-12-04 16:47:50,640: INFO: config: PyTorch version 2.4.1 available.]
+[2024-12-04 16:47:52,626: INFO: main: ####### Data Transformation Stage has started #######]
+[2024-12-04 16:47:52,627: INFO: stage_03_data_transformation: Setting Config Object...]
+[2024-12-04 16:47:52,634: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2024-12-04 16:47:52,643: INFO: common: YAML file: params.yaml loaded successfully]
+[2024-12-04 16:47:52,646: INFO: common: created directory at: data]
+[2024-12-04 16:47:52,647: INFO: stage_03_data_transformation: Reading configs...]
+[2024-12-04 16:47:52,648: INFO: common: created directory at: data/data_transformation/samsum_dataset]
+[2024-12-04 16:47:52,649: INFO: stage_03_data_transformation: Data Transforming Object...]
+[2024-12-04 16:47:54,017: INFO: data_transformation: Loading Data...]
+[2024-12-04 16:47:54,040: INFO: data_transformation: Transforming Data...]
+[2024-12-04 16:47:54,419: INFO: data_transformation: Creating Input Encodings...]
+[2024-12-04 16:47:56,624: INFO: data_transformation: Creating Target Encodings...]
+[2024-12-04 16:47:58,014: INFO: data_transformation: Creating Input Encodings...]
+[2024-12-04 16:48:00,928: INFO: data_transformation: Creating Target Encodings...]
+[2024-12-04 16:48:01,629: INFO: data_transformation: Creating Input Encodings...]
+[2024-12-04 16:48:04,426: INFO: data_transformation: Creating Target Encodings...]
+[2024-12-04 16:48:05,031: INFO: data_transformation: Creating Input Encodings...]
+[2024-12-04 16:48:07,180: INFO: data_transformation: Creating Target Encodings...]
+[2024-12-04 16:48:07,924: INFO: data_transformation: Creating Input Encodings...]
+[2024-12-04 16:48:10,146: INFO: data_transformation: Creating Target Encodings...]
+[2024-12-04 16:48:10,789: INFO: data_transformation: Creating Input Encodings...]
+[2024-12-04 16:48:12,877: INFO: data_transformation: Creating Target Encodings...]
+[2024-12-04 16:48:13,435: INFO: data_transformation: Creating Input Encodings...]
+[2024-12-04 16:48:15,531: INFO: data_transformation: Creating Target Encodings...]
+[2024-12-04 16:48:17,055: INFO: data_transformation: Creating Input Encodings...]
+[2024-12-04 16:48:19,129: INFO: data_transformation: Creating Target Encodings...]
+[2024-12-04 16:48:19,783: INFO: data_transformation: Creating Input Encodings...]
+[2024-12-04 16:48:22,014: INFO: data_transformation: Creating Target Encodings...]
+[2024-12-04 16:48:22,571: INFO: data_transformation: Creating Input Encodings...]
+[2024-12-04 16:48:24,899: INFO: data_transformation: Creating Target Encodings...]
+[2024-12-04 16:48:25,485: INFO: data_transformation: Creating Input Encodings...]
+[2024-12-04 16:48:27,628: INFO: data_transformation: Creating Target Encodings...]
+[2024-12-04 16:48:28,304: INFO: data_transformation: Creating Input Encodings...]
+[2024-12-04 16:48:30,498: INFO: data_transformation: Creating Target Encodings...]
+[2024-12-04 16:48:31,037: INFO: data_transformation: Creating Input Encodings...]
+[2024-12-04 16:48:33,512: INFO: data_transformation: Creating Target Encodings...]
+[2024-12-04 16:48:34,153: INFO: data_transformation: Creating Input Encodings...]
+[2024-12-04 16:48:36,362: INFO: data_transformation: Creating Target Encodings...]
+[2024-12-04 16:48:37,018: INFO: data_transformation: Creating Input Encodings...]
+[2024-12-04 16:48:38,708: INFO: data_transformation: Creating Target Encodings...]
+[2024-12-04 16:48:39,743: INFO: data_transformation: Creating Input Encodings...]
+[2024-12-04 16:48:41,883: INFO: data_transformation: Creating Target Encodings...]
+[2024-12-04 16:48:43,053: INFO: data_transformation: Creating Input Encodings...]
+[2024-12-04 16:48:45,849: INFO: data_transformation: Creating Target Encodings...]
+[2024-12-04 16:48:46,560: INFO: data_transformation: Saving Transformed Data...]
+[2024-12-04 16:48:46,761: INFO: main: ####### Data Transformation Stage is completed #######
+
+
+]
+[2025-01-03 16:14:53,181: INFO: config: PyTorch version 2.4.1 available.]
+[2025-01-03 17:37:25,982: INFO: config: PyTorch version 2.4.1 available.]
+[2025-01-03 17:49:09,319: INFO: config: PyTorch version 2.4.1 available.]
+[2025-01-03 17:49:30,914: INFO: main: ####### Model Evaluation Stage has started #######]
+[2025-01-03 17:49:30,975: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-01-03 17:49:31,029: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-01-03 17:49:31,037: INFO: common: created directory at: data]
+[2025-01-03 17:49:31,037: INFO: common: created directory at: data/model_evaluation]
+[2025-01-03 17:49:31,037: ERROR: main: Incorrect path_or_model_id: 'data/trained_model/tokenizer'. Please provide either the path to a local folder or the repo_id of a model on the Hub.]
+Traceback (most recent call last):
+  File "D:\Projects\NLP\Text Summarization\Project Files\text_summarization_proj\lib\site-packages\transformers\utils\hub.py", line 403, in cached_file
+    resolved_file = hf_hub_download(
+  File "D:\Projects\NLP\Text Summarization\Project Files\text_summarization_proj\lib\site-packages\huggingface_hub\utils\_deprecation.py", line 101, in inner_f
+    return f(*args, **kwargs)
+  File "D:\Projects\NLP\Text Summarization\Project Files\text_summarization_proj\lib\site-packages\huggingface_hub\utils\_validators.py", line 106, in _inner_fn
+    validate_repo_id(arg_value)
+  File "D:\Projects\NLP\Text Summarization\Project Files\text_summarization_proj\lib\site-packages\huggingface_hub\utils\_validators.py", line 154, in validate_repo_id
+    raise HFValidationError(
+huggingface_hub.errors.HFValidationError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': 'data/trained_model/tokenizer'. Use `repo_type` argument if needed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\NLP\Text Summarization\Project Files\main.py", line 66, in <module>
+    objME.main()
+  File "d:\projects\nlp\text summarization\project files\src\text_summarization\pipeline\stage_05_model_evaluation.py", line 14, in main
+    model_evaluation_config.evaluate()
+  File "d:\projects\nlp\text summarization\project files\src\text_summarization\components\model_evaluation.py", line 40, in evaluate
+    tokenizer = AutoTokenizer.from_pretrained(self.config.tokenizer_path)
+  File "D:\Projects\NLP\Text Summarization\Project Files\text_summarization_proj\lib\site-packages\transformers\models\auto\tokenization_auto.py", line 844, in from_pretrained
+    tokenizer_config = get_tokenizer_config(pretrained_model_name_or_path, **kwargs)
+  File "D:\Projects\NLP\Text Summarization\Project Files\text_summarization_proj\lib\site-packages\transformers\models\auto\tokenization_auto.py", line 676, in get_tokenizer_config
+    resolved_config_file = cached_file(
+  File "D:\Projects\NLP\Text Summarization\Project Files\text_summarization_proj\lib\site-packages\transformers\utils\hub.py", line 469, in cached_file
+    raise EnvironmentError(
+OSError: Incorrect path_or_model_id: 'data/trained_model/tokenizer'. Please provide either the path to a local folder or the repo_id of a model on the Hub.
+[2025-01-03 17:51:33,587: INFO: config: PyTorch version 2.4.1 available.]
+[2025-01-03 17:51:53,469: INFO: main: ####### Model Evaluation Stage has started #######]
+[2025-01-03 17:51:53,474: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-01-03 17:51:53,480: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-01-03 17:51:53,482: INFO: common: created directory at: data]
+[2025-01-03 17:51:53,483: INFO: common: created directory at: data/model_evaluation]
+[2025-01-03 17:51:53,484: ERROR: main: Incorrect path_or_model_id: 'data/trained_model/tokenizer'. Please provide either the path to a local folder or the repo_id of a model on the Hub.]
+Traceback (most recent call last):
+  File "D:\Projects\NLP\Text Summarization\Project Files\text_summarization_proj\lib\site-packages\transformers\utils\hub.py", line 403, in cached_file
+    resolved_file = hf_hub_download(
+  File "D:\Projects\NLP\Text Summarization\Project Files\text_summarization_proj\lib\site-packages\huggingface_hub\utils\_deprecation.py", line 101, in inner_f
+    return f(*args, **kwargs)
+  File "D:\Projects\NLP\Text Summarization\Project Files\text_summarization_proj\lib\site-packages\huggingface_hub\utils\_validators.py", line 106, in _inner_fn
+    validate_repo_id(arg_value)
+  File "D:\Projects\NLP\Text Summarization\Project Files\text_summarization_proj\lib\site-packages\huggingface_hub\utils\_validators.py", line 154, in validate_repo_id
+    raise HFValidationError(
+huggingface_hub.errors.HFValidationError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': 'data/trained_model/tokenizer'. Use `repo_type` argument if needed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\NLP\Text Summarization\Project Files\main.py", line 66, in <module>
+    objME.main()
+  File "d:\projects\nlp\text summarization\project files\src\text_summarization\pipeline\stage_05_model_evaluation.py", line 14, in main
+    model_evaluation_config.evaluate()
+  File "d:\projects\nlp\text summarization\project files\src\text_summarization\components\model_evaluation.py", line 40, in evaluate
+    tokenizer = AutoTokenizer.from_pretrained(self.config.tokenizer_path)
+  File "D:\Projects\NLP\Text Summarization\Project Files\text_summarization_proj\lib\site-packages\transformers\models\auto\tokenization_auto.py", line 844, in from_pretrained
+    tokenizer_config = get_tokenizer_config(pretrained_model_name_or_path, **kwargs)
+  File "D:\Projects\NLP\Text Summarization\Project Files\text_summarization_proj\lib\site-packages\transformers\models\auto\tokenization_auto.py", line 676, in get_tokenizer_config
+    resolved_config_file = cached_file(
+  File "D:\Projects\NLP\Text Summarization\Project Files\text_summarization_proj\lib\site-packages\transformers\utils\hub.py", line 469, in cached_file
+    raise EnvironmentError(
+OSError: Incorrect path_or_model_id: 'data/trained_model/tokenizer'. Please provide either the path to a local folder or the repo_id of a model on the Hub.
+[2025-01-03 19:05:04,908: INFO: config: PyTorch version 2.4.1 available.]
+[2025-01-03 19:05:20,026: INFO: main: ####### Model Evaluation Stage has started #######]
+[2025-01-03 19:05:20,049: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-01-03 19:05:20,078: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-01-03 19:05:20,080: INFO: common: created directory at: data]
+[2025-01-03 19:05:20,081: INFO: common: created directory at: data/model_evaluation]
+[2025-01-03 19:05:20,674: ERROR: main: Incorrect path_or_model_id: 'data/trained_model/pegasus-samsum-model'. Please provide either the path to a local folder or the repo_id of a model on the Hub.]
+Traceback (most recent call last):
+  File "D:\Projects\NLP\Text Summarization\Project Files\text_summarization_proj\lib\site-packages\transformers\utils\hub.py", line 403, in cached_file
+    resolved_file = hf_hub_download(
+  File "D:\Projects\NLP\Text Summarization\Project Files\text_summarization_proj\lib\site-packages\huggingface_hub\utils\_deprecation.py", line 101, in inner_f
+    return f(*args, **kwargs)
+  File "D:\Projects\NLP\Text Summarization\Project Files\text_summarization_proj\lib\site-packages\huggingface_hub\utils\_validators.py", line 106, in _inner_fn
+    validate_repo_id(arg_value)
+  File "D:\Projects\NLP\Text Summarization\Project Files\text_summarization_proj\lib\site-packages\huggingface_hub\utils\_validators.py", line 154, in validate_repo_id
+    raise HFValidationError(
+huggingface_hub.errors.HFValidationError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': 'data/trained_model/pegasus-samsum-model'. Use `repo_type` argument if needed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\NLP\Text Summarization\Project Files\main.py", line 66, in <module>
+    objME.main()
+  File "d:\projects\nlp\text summarization\project files\src\text_summarization\pipeline\stage_05_model_evaluation.py", line 14, in main
+    model_evaluation_config.evaluate()
+  File "d:\projects\nlp\text summarization\project files\src\text_summarization\components\model_evaluation.py", line 41, in evaluate
+    model_pegasus = AutoModelForSeq2SeqLM.from_pretrained(self.config.model_path).to(device)
+  File "D:\Projects\NLP\Text Summarization\Project Files\text_summarization_proj\lib\site-packages\transformers\models\auto\auto_factory.py", line 487, in from_pretrained
+    resolved_config_file = cached_file(
+  File "D:\Projects\NLP\Text Summarization\Project Files\text_summarization_proj\lib\site-packages\transformers\utils\hub.py", line 469, in cached_file
+    raise EnvironmentError(
+OSError: Incorrect path_or_model_id: 'data/trained_model/pegasus-samsum-model'. Please provide either the path to a local folder or the repo_id of a model on the Hub.
+[2025-01-03 19:06:45,433: INFO: config: PyTorch version 2.4.1 available.]
+[2025-01-03 19:06:47,740: INFO: main: ####### Model Evaluation Stage has started #######]
+[2025-01-03 19:06:47,746: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-01-03 19:06:47,754: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-01-03 19:06:47,755: INFO: common: created directory at: data]
+[2025-01-03 19:06:47,756: INFO: common: created directory at: data/model_evaluation]
+[2025-01-03 19:38:51,486: INFO: rouge_scorer: Using default tokenizer.]
+[2025-01-03 19:40:50,435: INFO: main: ####### Model Evaluation Stage is completed #######
+
+
+]

@@ -1,7 +1,9 @@
 text_summarization_proj/
 src/text_summarization.egg-info/
 src/text_summarization/__pycache__/__init__.cpython-310.pyc
-data/
+data/text_data/
+data/trained_model/
+data/data_trans*
 *.pyc
 check*
 mlruns/*
