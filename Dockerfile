@@ -6,6 +6,7 @@ WORKDIR /app
 COPY . /app
 COPY requirements.txt .
 
+RUN pip install wheel
 RUN pip install -r requirements.txt
 RUN pip install --upgrade accelerate
 RUN pip uninstall -y transformers accelerate
