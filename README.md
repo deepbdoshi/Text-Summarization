@@ -56,10 +56,10 @@ Eric and Rob are going to watch a stand-up on youtube.
 * Designed an intuitive UI using **FastAPI** for providing an interactive experience to the users to utilize the app.
 
 
-#### Usage
-* Access the AWS link.
-* Upload the X-Ray image and hit the predict button.
-* Acquire the prediction.
+#### Deployment
+* Implemented automated CI/CD pipelines using GitHub Actions by configuring AWS credentials in GitHub Secrets.
+* Provisioned an EC2 instance with AmazonEC2ContainerRegistryFullAccess and AmazonEC2FullAccess policies.
+* Built and pushed a Docker image to AWS ECR and deployed it on the EC2 instance.
 
 
 #### Results
